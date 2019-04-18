@@ -107,5 +107,5 @@ venv.bak/
 .idea/
 project_code/
 nohup.out
-*pcap
-*zip
+*.pcap
+*.zip
