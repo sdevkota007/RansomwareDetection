@@ -8,17 +8,30 @@ cd downloads
 python wgetall.py
 ```
 
-Copy around 90% of the downloaded malware dataset into ./malware_pcap/train_source/ and remaining 10% to 
+unzip all files inside "./downloads/malware_data" directory with password 'infected'
+```
+unzip -P infected \*.zip
+```
+
+Now, we can remove all of the unnecessary zip files inside "./downloads/malware_data" directory
+```bash
+rm *.zip
+```
+
+Move around 90% of the downloaded malware pcap files into ./malware_pcap/train_source/ and remaining 10% to 
 ./malware_pcap/test_source/
 
-Simarly, Copy around 90% of the downloaded normal dataset into ./normal_pcap/train_source/ and remaining 10% to 
-./normal_pcap/test_source/
+Simarly, move around 90% of the downloaded normal pcap files into ./normal_pcap/train/ and remaining 10% to 
+./normal_pcap/test/
 
-unzip all files in a directory with password
+
+Now, to parse http header from pcap files, run:
 ```
-unzip -P <password> \*.zip
-```
-
-
-python pcap_Parser.py -p > "parser.log"
+python pcap_Parser.py > "parser.log" 
 python load_shift.py
+```
+If you want to parse tcp header instead of http, run this instead: 
+```
+python pcap_Parser.py -p > "parser.log" 
+python load_shift.py
+```
