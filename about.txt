@@ -1,0 +1,5 @@
+Normal pcap files downloaded from
+https://www.netresec.com/?page=PCAP4SICS
+
+Malware pcap files downloaded from
+http://www.malware-traffic-analysis.net/
