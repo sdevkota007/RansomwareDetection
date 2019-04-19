@@ -1,4 +1,21 @@
+import numpy as np
 
+
+def get_seperate(train):
+    """ Get seperate data form to fill in sklearn function
+    @param train: train data must be in a zipped list
+
+    @returns: datas and its labels
+    """
+
+    Xtrain = []
+    Ytrain = []
+    for t in train:
+        Xtrain.append(t[0])
+        Ytrain.append(t[1])
+
+    Xtrain = np.matrix(Xtrain)
+    return Xtrain, Ytrain
 
 def handleErrorPacket(packetData):
     """Gets payload even if error raised.
