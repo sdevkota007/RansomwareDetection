@@ -41,3 +41,8 @@ python ./visual/pca.py ./dataset/test
 ```
 
 It will produced a pickle file
+
+Finally to run the deep neural network model
+```bash
+python simple_dnn.py
+```
