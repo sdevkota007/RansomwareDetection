@@ -1,6 +1,6 @@
 import tensorflow as tf
 import sys
-from project_code.model.util import get_seperate
+from util import get_seperate
 import pickle
 from sklearn.utils import shuffle
 import numpy as np
