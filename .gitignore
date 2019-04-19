@@ -112,3 +112,4 @@ nohup.out
 *.test
 *.in
 *.out
+*.pickle

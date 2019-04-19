@@ -35,3 +35,11 @@ If you want to parse tcp header instead of http, run this instead:
 python pcap_Parser.py -p > "parser.log" 
 python load_shift.py
 ```
+
+Use PCA to reduce dimensions of initial payloads.
+```bash
+python ./visual/pca.py ./dataset/train
+python ./visual/pca.py ./dataset/test
+```
+
+It will produced a pickle file

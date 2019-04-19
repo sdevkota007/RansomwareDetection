@@ -21,7 +21,13 @@ def main():
     
     
     # Save the PCA vectors
-    with open("packet_pcainfo", "wb") as f:
+    try:
+        output_file = filename.split('/')[-1] + ".pickle"
+    except exception as e:
+        print(e)
+        output_file = filename + ".pickle"
+        pass
+    with open(output_file, "wb") as f:
         pickle.dump(reduced, f)
         pickle.dump(Xtrain, f)
         pickle.dump(Ytrain, f)
