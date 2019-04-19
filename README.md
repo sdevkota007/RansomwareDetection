@@ -26,14 +26,12 @@ Simarly, move around 90% of the downloaded normal pcap files into ./normal_pcap/
 
 
 Now, to parse http header from pcap files, run:
-```
-python pcap_Parser.py > "parser.log" 
-python load_shift.py
+```bash
+./extract_http.sh
 ```
 If you want to parse tcp header instead of http, run this instead: 
-```
-python pcap_Parser.py -p > "parser.log" 
-python load_shift.py
+```bash
+./extract_tcp.sh
 ```
 
 Use PCA to reduce dimensions of initial payloads.
