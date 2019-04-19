@@ -9,18 +9,21 @@ import numpy as np
 # (x_train, y_train),(x_test, y_test) = mnist.load_data()  # unpacks images to x_train/x_test and labels to y_train/y_test
 
 
-filename = sys.argv[1]
 
-with open(filename, "rb") as f:
+with open("train.pickle", "rb") as f:
     reduced = pickle.load(f)
     Xtrain = pickle.load(f)
     Ytrain = pickle.load(f)
-
-
 # Shuffle data
 x_train, y_train = get_seperate(shuffle(zip(reduced, Ytrain)))
-#todo: get actual test data, the line below is just to check if the code works
-x_test, y_test = get_seperate(shuffle(zip(reduced, Ytrain)))
+
+
+with open("test.pickle", "rb") as f:
+    reduced = pickle.load(f)
+    Xtest = pickle.load(f)
+    Ytest = pickle.load(f)
+
+x_test, y_test = get_seperate(shuffle(zip(reduced, Ytest)))
 
 
 x_train = np.array(x_train, dtype=np.float32)
@@ -36,6 +39,14 @@ print('x_train')
 print('Shape', x_train.shape)
 print('Type', type(x_train))
 print('Type of one training example', type(x_train[0]))
+
+
+print('x_test')
+print('Shape', x_test.shape)
+print('Type', type(x_test))
+print('Type of one training example', type(x_test[0]))
+exit()
+
 
 
 x_train = tf.keras.utils.normalize(x_train, axis=1)  # scales data between 0 and 1
