@@ -43,9 +43,9 @@ print('Type of one training example', type(x_train[0]))
 
 model = tf.keras.models.Sequential()  # a basic feed-forward model
 model.add(tf.keras.layers.Flatten())  # takes our 28x28 and makes it 1x784
-model.add(tf.keras.layers.Dense(128, activation=tf.nn.relu))  # a simple fully-connected layer, 128 units, relu activation
-model.add(tf.keras.layers.Dense(128, activation=tf.nn.relu))  # a simple fully-connected layer, 128 units, relu activation
-model.add(tf.keras.layers.Dense(10, activation=tf.nn.softmax))  # our output layer. 10 units for 10 classes. Softmax for probability distribution
+model.add(tf.keras.layers.Dense(128, activation=tf.nn.relu))  # a simple fully-connected layer
+model.add(tf.keras.layers.Dense(64, activation=tf.nn.relu))  # a simple fully-connected layer
+model.add(tf.keras.layers.Dense(2, activation=tf.nn.softmax))  # our output layer. 2 units for 2 classes. Softmax for probability distribution
 
 model.compile(optimizer='adam',  # Good default optimizer to start with
               loss='sparse_categorical_crossentropy',  # how will we calculate our "error." Neural network aims to minimize loss.
