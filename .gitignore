@@ -115,3 +115,4 @@ downloads/normal_data/*
 *.in
 *.out
 *.pickle
+nist.py
