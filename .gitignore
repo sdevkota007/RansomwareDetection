@@ -116,3 +116,4 @@ downloads/normal_data/*
 *.out
 *.pickle
 nist.py
+logs/
