@@ -1,6 +1,4 @@
-# RansomwareDetection
-Ransomware Detection using Deep Learning
-
+# Ransomware Detection using Deep Learning
 
 Download the malware and normal dataset using
 ```bash
@@ -18,11 +16,9 @@ Now, we can remove all of the unnecessary zip files inside "./downloads/malware_
 rm *.zip
 ```
 
-Move around 90% of the downloaded malware pcap files into ./malware_pcap/train_source/ and remaining 10% to 
-./malware_pcap/test_source/
+Move all of the malware pcap files into  directory "./malware_pcap/train_source/" 
 
-Simarly, move around 90% of the downloaded normal pcap files into ./normal_pcap/train/ and remaining 10% to 
-./normal_pcap/test/
+and all of the normal pcap files into directory "./normal_pcap/train/"
 
 
 Now, to parse http header from pcap files, run:
@@ -37,7 +33,6 @@ If you want to parse tcp header instead of http, run this instead:
 Use PCA to reduce dimensions of initial payloads.
 ```bash
 python ./visual/pca.py ./dataset/train
-python ./visual/pca.py ./dataset/test
 ```
 
 It will produced a pickle file
