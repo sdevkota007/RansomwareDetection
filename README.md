@@ -7,13 +7,15 @@ python wgetall.py
 ```
 
 unzip all files inside "./downloads/malware_data" directory with password 'infected'
-```
+```bash
+cd ./downloads/malware_data
 unzip -P infected \*.zip
 ```
 
-Now, we can remove all of the unnecessary zip files inside "./downloads/malware_data" directory
+Now, we can remove all of the unnecessary files, except for pcap files, inside "./downloads/malware_data" directory 
 ```bash
-rm *.zip
+cd ./downloads/malware_data
+find . -not -name '*.pcap' -delete
 ```
 
 Move all of the malware pcap files into  directory "./malware_pcap/train_source/" 

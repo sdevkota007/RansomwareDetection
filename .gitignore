@@ -106,6 +106,8 @@ venv.bak/
 .idea/
 project_code/
 nohup.out
+downloads/malware_data/*
+downloads/normal_data/*
 *.pcap
 *.zip
 *.train
